@@ -6,4 +6,4 @@ I was able to perform the following:
 - [X] Open a release pull request.
 - [X] Generate release notes automatically.
 - [X] Merge and finalize the release branch.
-- [ ] Commit a hotfix to the release.
+- [X] Commit a hotfix to the release.
