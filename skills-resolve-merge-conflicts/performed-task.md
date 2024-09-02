@@ -1,4 +1,4 @@
-# Resolve merge conflicts
+# Resolve Merge Conflicts
 
 I was able to perform the following:
 - [X] Learned about why merge conflicts happens.
