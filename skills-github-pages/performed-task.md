@@ -1,4 +1,4 @@
-# Communicate using Markdown
+# GitHub Pages
 
 I was able to perform the following:
 - [X] Enabled GitHub Pages.
