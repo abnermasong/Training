@@ -1,4 +1,4 @@
-# Communicate using Markdown
+# Communicate Using Markdown
 
 I was able to perform the following:
 - [X] Learned Markdown.
