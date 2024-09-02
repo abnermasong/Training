@@ -1,4 +1,4 @@
-# Review pull requests
+# Review Pull Requests
 
 I was able to perform the following:
 - [X] Learned to assign pull requests review.
