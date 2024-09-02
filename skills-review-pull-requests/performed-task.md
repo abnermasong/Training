@@ -5,3 +5,5 @@ I was able to perform the following:
 - [X] Left a review on a pull request.
 - [X] Suggest changes to a pull request.
 - [X] Applied suggested changes to a pull request.
+
+[RETURN TO HOME PAGE](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/README.md)
