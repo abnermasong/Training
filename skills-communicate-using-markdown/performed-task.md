@@ -7,3 +7,5 @@ I was able to perform the following:
 - [X] Use javascript to create a variable that contains the string "Hello, world!"
 - [X] Create a list/check box using - [ ]
 - [X] Insert an image
+
+[RETURN TO HOME PAGE](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/README.md)
