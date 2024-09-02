@@ -1,7 +1,6 @@
-# GitHub Output
-This repository contains the output of my GitHub Training.
+# GITHUB OUTPUT
 
-The following are the GitHub Topics and the Tasks performed:
+### The following are the GitHub Topics and the Tasks Performed:
 
 + [Introduction to GitHub](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/skills-introduction-to-github/performed-task.md)
 + [Communicate Using Markdown](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/skills-communicate-using-markdown/performed-task.md) - [OUTPUT](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/skills-communicate-using-markdown/output-repo/index.md)
