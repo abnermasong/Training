@@ -8,8 +8,6 @@ I was able to perform the following:
 - [X] Create a list/check box using - [ ]
 - [X] Insert an image
 
-[RETURN TO HOME PAGE](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/README.md)
-
 # This is an `<h1>` header, which is the _**largest**_.
 
 ## This is an `<h2>` header
