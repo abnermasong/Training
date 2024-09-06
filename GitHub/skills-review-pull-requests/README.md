@@ -7,4 +7,4 @@ I was able to perform the following:
 - [X] Suggest changes to a pull request.
 - [X] Applied suggested changes to a pull request.
 
-[RETURN TO HOME PAGE](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/README.md)
+[RETURN TO HOME PAGE](https://github.com/ajmasong/Training/blob/main/GitHub/README.md)
