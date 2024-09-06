@@ -14,3 +14,14 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+# Introduction to GitHub
+
+I was able to perform the following:
+- [X] Created a branch.
+- [X] Commit changes.
+- [X] Pull request.
+- [X] Merge the pull request.
+- [X] Set up my README Profile.
+
+[RETURN TO HOME PAGE](https://github.com/ajmasong/Training/blob/main/GitHub/README.md)
