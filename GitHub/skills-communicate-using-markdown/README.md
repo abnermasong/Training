@@ -30,4 +30,4 @@ var myVar = "Hello, world!";
 
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
-[RETURN TO HOME PAGE](https://github.com/ajmasong/Training-in-the-GitHub/blob/main/README.md)
+[RETURN TO HOME PAGE](https://github.com/ajmasong/Training/blob/main/GitHub/README.md)
