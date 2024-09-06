@@ -1,3 +1,13 @@
+# Communicate Using Markdown
+
+I was able to perform the following:
+- [X] Learned Markdown.
+- [X] Create Markdown File.
+- [X] Create a header from h1 to h6 using # to ######. 
+- [X] Use javascript to create a variable that contains the string "Hello, world!"
+- [X] Create a list/check box using - [ ]
+- [X] Insert an image
+
 # This is an `<h1>` header, which is the _**largest**_.
 
 ## This is an `<h2>` header
