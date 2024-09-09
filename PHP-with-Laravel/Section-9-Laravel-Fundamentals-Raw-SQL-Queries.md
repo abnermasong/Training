@@ -1,4 +1,4 @@
-# Database - Raw SQL Queries
+# Raw SQL Queries
 
 ## Creating/Inserting Data
 - Use `create()` or `insert()` method.
