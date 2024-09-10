@@ -54,7 +54,8 @@ public function destroy(string $id)
     }
 
 ```
-
+### CSRF PROTECTION
+- Cross-site request forgeries are a type of malicious exploit whereby unauthorized commands are performed on behalf of an authenticated user. 
 ```blade
 {{-- CREATE PAGE --}}
 @extends('layouts.app')
