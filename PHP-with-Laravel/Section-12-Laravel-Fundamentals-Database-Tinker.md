@@ -1,4 +1,4 @@
-# Tinker
+# Database - Tinker
 
 - Tinker allows you to interact with your entire Laravel application on the command line.
 - To use tinker, use `php artisan tinker`.
