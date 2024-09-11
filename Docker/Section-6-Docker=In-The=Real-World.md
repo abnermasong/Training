@@ -64,3 +64,13 @@ cd C:\Users\Nabepero-19028\Abner\diveintodocker\diveintodocker\src\06-docker-in-
 
 ### Live Code Reloading with Volumes
 - `docker container run -it --rm --name web1 -p 5000:5000 -e FLASK_APP=app.py web1 -e FLASK_DEBUG=1 -v C/Users/Nabepero-19028/Abner/diveintodocker/diveintodocker/src/06-docker-in-the-real-world/03-creating-a-dockerfile-part-1 web1` : This does not work on my end. The debugging techniques didn't also work.
+
+## Cleaning Up
+- `docker container ls` : List all containers.
+- `docker container ls -a` : List all stopped containers.
+- `docker system df` - Show disk space is being used by docker, append `-v` is verbose
+- `docker image ls` - Shows all docker images, any image that has the `<none>` tag are dangling/unused images
+- `docker system info` - Display information about docker installation
+- `docker system prune` - Prunes all safe to delete images and containers, append `-f` to delete without needing to confirm it, `-a` is to delete all unused images.
+- `docker stop name1 name2 name3` - Stop the containers in `name1`, `name2`, and `name3`.
+- `docker stop $(docker container ls -a -q)` - Stops multiple containers especially on running more than 10 or more docker containers
