@@ -1,4 +1,4 @@
-# Dockerizing your web applications
+# Dockerizing Your Web Applications
 
 ### General tips for Dockerizing any web app
 1. Log to stdout
