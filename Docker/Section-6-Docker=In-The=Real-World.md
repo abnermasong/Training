@@ -63,4 +63,4 @@ cd C:\Users\Nabepero-19028\Abner\diveintodocker\diveintodocker\src\06-docker-in-
 - `docker container stop name` : To stop a running container.
 
 ### Live Code Reloading with Volumes
-- `docker container run -it --rm --name web1 -p 5000:5000 -e FLASK_APP=app.py web1 -e FLASK_DEBUG=1 -v C/Users/Nabepero-19028/Abner/diveintodocker/diveintodocker/src/06-docker-in-the-real-world/03-creating-a-dockerfile-part-1 web1` This does not work on my end. The debugging techniques didn't also work.
+- `docker container run -it --rm --name web1 -p 5000:5000 -e FLASK_APP=app.py web1 -e FLASK_DEBUG=1 -v C/Users/Nabepero-19028/Abner/diveintodocker/diveintodocker/src/06-docker-in-the-real-world/03-creating-a-dockerfile-part-1 web1` : This does not work on my end. The debugging techniques didn't also work.
