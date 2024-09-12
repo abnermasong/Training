@@ -178,6 +178,6 @@ Route::middleware('auth')->group(function(){
     @endsection
 
 </x-admin-master>
-
 ```
+### Storing and Viewing Posted Admin Post
 
