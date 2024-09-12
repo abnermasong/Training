@@ -71,7 +71,7 @@ use App\Models\Post;
 ```
 - `php artisan db:seed` : To generate test data in the database.
 
-### Displaying `Post` on `Home View`  
+### Displaying Post on Home View
 ```php
 //HomeController
  public function index()
@@ -84,8 +84,7 @@ use App\Models\Post;
 - Add a `@foreach` to iterate through all the data in the database.
 - Change the values you want to display accordingly.
 ```blade
-   <!-- Blog Post -->
-
+{{--Blog Post--}}
    @foreach ($posts as $post)
       <div class="card mb-4">
         <img class="card-img-top" src="{{$post->post_image}}" alt="Card image cap">
@@ -102,3 +101,21 @@ use App\Models\Post;
       @endforeach
 
 ```
+
+### Displaying Individual Post
+```php
+//web.php
+Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post');
+```
+```php
+//PostController
+  public function show(Post $post){
+        return view('blog-post', ['post' => $post]);
+    }
+```
+```blade
+{{--Blog Post -> READ MORE BTN--}}
+<a href="{{route('post',$post->id)}}" class="btn btn-primary">Read More &rarr;</a>
+```
+
+
