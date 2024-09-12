@@ -180,4 +180,30 @@ Route::middleware('auth')->group(function(){
 </x-admin-master>
 ```
 ### Storing and Viewing Posted Admin Post
+- Add a `store` method in `PostController`
+```php
+public function store(){
+        $inputs = request()->validate([
+            'title' => 'required|min:8|max:255',
+            'post_image' => 'file',
+            'body' => 'required'
+        ]);
+        if (request('post_image')){
+            $inputs['post_image'] = request('post_image')->store('images');
+        }
+        auth()->user()->post()->create($inputs);
+
+        return back();
+        
+    }
+```
+- Add it to your route and views
+```php
+//web.php
+    Route::post('/admin/posts', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
+```
+```blade
+{{--IN THE CREATE.BLADE.PHP--}}
+ <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
+```
 
