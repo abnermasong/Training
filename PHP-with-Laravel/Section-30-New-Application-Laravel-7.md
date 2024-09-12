@@ -72,6 +72,15 @@ use App\Models\Post;
 - `php artisan db:seed` : To generate test data in the database.
 
 ### Displaying `Post` on `Home View`  
+```php
+//HomeController
+ public function index()
+    {
+        $posts = Post::all();
+
+        return view('home', ['posts' => $posts]);
+    }
+```
 - Add a `@foreach` to iterate through all the data in the database.
 - Change the values you want to display accordingly.
 ```blade
