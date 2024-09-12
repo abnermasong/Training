@@ -44,7 +44,7 @@
 - `php artisan migrate` : Dont forget to run the migration. 
 
 ### Generating Test Data
-- `php artisan make:factory PostFactory --model="Post"` : To create a Post Factory.
+- `php artisan make:factory PostFactory --model="Post"` : To create a factory for Post.
 - Create a factory for the table of `posts`
 ```php
 use App\Models\User;
