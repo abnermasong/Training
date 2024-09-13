@@ -179,7 +179,7 @@ Route::middleware('auth')->group(function(){
 
 </x-admin-master>
 ```
-### Storing and Viewing Posted Admin Post
+### Storing Admin Post
 - Add a `store` method in `PostController`
 ```php
 public function store(){
@@ -199,11 +199,74 @@ public function store(){
 ```
 - Add it to your route and views
 ```php
-//web.php
+//web.php inside Route::middleware('auth')->group(function()
     Route::post('/admin/posts', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 ```
 ```blade
 {{--IN THE CREATE.BLADE.PHP--}}
  <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
 ```
+### Viewing Admin Post
+- Add an `index` method in `PostController`
+```php
+    public function index(){    
+        $post = Post::all();
+        return view ('admin.posts.index', ['post' => $post]);  
+    }
+```
+- Add it to your routes
+```php
+   Route::get('/admin/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
+```
+- For views, create an `index.blade.php` in `views/admin/posts`.
+- Create a `sectoion` for the copied `<!-- DataTales Example -->`
+- Configure `<!-- DataTales Example -->` as follows:
+```blade
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Title</th>
+                      <th>Image</th>
+                      <th>Created At</th>
+                      <th>Updated At</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Id</th>
+                      <th>Title</th>
+                      <th>Image</th>
+                      <th>Created At</th>
+                      <th>Updated At</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    
+                    @foreach ($post as $post)
 
+                    <tr>
+                        <td>{{$post->id}}</td>
+                        <td>{{$post->title}}</td>
+                        <td><img height = "40px" src="{{$post->post_image}}" alt=""></td>
+                        <td>{{$post->created_at->diffForHumans()}}</td>
+                        <td>{{$post->updated_at->diffForHumans()}}</td>
+                    </tr>
+
+                    @endforeach
+                  </tbody>
+                </table>
+```
+- Create a section for `Page level plugins` and name it `scripts`.
+```blade
+    @section('scripts')
+
+    <!-- Page level plugins -->
+    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+
+    @endSection
+```
