@@ -255,7 +255,7 @@ public function store(){
                     <tr>
                         <td>{{$post->id}}</td>
                         <td>{{$post->title}}</td>
-                        <td><img height = "40px" src="{{$post->post_image}}" alt=""></td>
+                        <td><img width = "100px" src="{{$post->post_image}}" alt=""></td>
                         <td>{{$post->created_at->diffForHumans()}}</td>
                         <td>{{$post->updated_at->diffForHumans()}}</td>
                     </tr>
@@ -277,4 +277,14 @@ public function store(){
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
     @endSection
+```
+- Add an mutators to ensure local images are displayed:
+```php
+//User Model
+    public function getPostImageAttribute($value) {
+        if (strpos($value, 'https://') !== FALSE || strpos($value, 'http://') !== FALSE) {
+            return $value;
+        }
+        return asset('storage/' . $value);
+        }
 ```
