@@ -6,4 +6,4 @@
       - Name
       - Email
       - Password
-- Adding a new column in the database without resetting all the saved data. 
+- Adding a new column in the database without resetting all the saved data.
