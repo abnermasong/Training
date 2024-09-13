@@ -1,19 +1,21 @@
 # New Application - Laravel 7
+- Implementing my knowledge to create a somehow functional web application.
 
-## NOTES
-
-### Importing the Provided Project Assets
-- Value of `href` to `{{ asset('/css/app.css') }}`
+## Importing the Provided Project Assets
+- `href`=`{{asset('/css/app.css')}}`
 - Asset directory should match in the code and in the file directory.
 
 ### Linking Button to View
-- ` <a class="navbar-brand" href="{{route('home')}}">HOME</a>`
-- `'home'` : Is the name of the `view.blade.php`.
+- `<a class="navbar-brand" href="{{route('home')}}">HOME</a>`
+- `'home'` : is from the `Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');`
 
-### Migration
-- `php artisan make:mode Post --mc` : `m` for `migration`, `c` for `controller`.
+## Migration
+- `php artisan make:mode Post --mc` :
+  - `m`:`migration`,
+  - `c`:`controller`.
 - Add tables in your created migration:
 ```php
+//2024_09_12_042041_create_posts_table.php -- created by: php artisan make:mode Post --mc
  public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
@@ -43,7 +45,7 @@
 - Instead of `$fillable`, use `$guarded` so you won't need to add each table category.
 - `php artisan migrate` : Dont forget to run the migration. 
 
-### Generating Test Data
+## Generating Test Data
 - `php artisan make:factory PostFactory --model="Post"` : To create a factory for Post.
 - Create a factory for the table of `posts`
 ```php
@@ -60,6 +62,7 @@ use App\Models\User;
 ```
 - Create a function in `DatabaseSeeder` that generates test data.
 ```php
+//DatabaseSeeder.php
 use App\Models\User;
 use App\Models\Post;
   public function run(): void
@@ -71,7 +74,7 @@ use App\Models\Post;
 ```
 - `php artisan db:seed` : To generate test data in the database.
 
-### Displaying Post on Home View
+## Displaying Post on Home View
 ```php
 //HomeController
  public function index()
@@ -102,7 +105,7 @@ use App\Models\Post;
 
 ```
 
-### Displaying Individual Post
+## Displaying Individual Post
 ```php
 //web.php
 Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post');
@@ -118,7 +121,7 @@ Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])
 <a href="{{route('post',$post->id)}}" class="btn btn-primary">Read More &rarr;</a>
 ```
 
-### Creating a Post from Admin
+## Creating a Post from Admin
 - From the `admin-master` take a section you want to modify into a Create Option.
 - Create post route. Add a middleware to `admin.index` and `admin.post`
 ```php
@@ -182,7 +185,8 @@ Route::middleware('auth')->group(function(){
 
 </x-admin-master>
 ```
-### Storing Admin Post
+
+## Storing Admin Post
 - Add a `store` method in `PostController`
 ```php
 //PostController
@@ -210,7 +214,8 @@ public function store(){
 {{--create.blade.php--}}
  <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
 ```
-### Viewing Admin Post
+
+## Viewing Admin Post
 - Add an `index` method in `PostController`
 ```php
 //PostController
@@ -289,11 +294,10 @@ public function store(){
         }
 ```
 
-# Policies
+## Policies
 - Policies are classes that organize authorization logic around a particular model or resource. For example, if your application is a blog, you may have an App\Models\Post model and a corresponding App\Policies\PostPolicy to authorize user actions such as creating or updating posts.
 - `php artisan make:policy PostPolicy --model=Post` : Generate a policy. Directory will be `app/Policies`.
 
 ## Pagination
-
 - `paginate(NoOfItemsPerPage)` : method for pagination.
 - `simplePaginate(NoOfItemsPerPage)` : to paginate that only displays `next` and `previous`.
