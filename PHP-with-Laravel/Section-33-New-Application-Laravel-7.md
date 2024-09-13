@@ -1,5 +1,5 @@
 # Admin Users
-- Users with roles `admin` can view all the `users` and can even `delete` users. This involes implemnting eloquent relationships.
+- Users with roles `admin` can view all the `users` and can even `delete` users. This involes implementing eloquent relationships.
 - `Tinker` is very useful when it comes to checking and attaching roles/permission to a user.
 
 # Routes for Large Application
