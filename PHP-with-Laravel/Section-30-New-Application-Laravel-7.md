@@ -288,3 +288,12 @@ public function store(){
         return asset('storage/' . $value);
         }
 ```
+
+# Policies
+- Policies are classes that organize authorization logic around a particular model or resource. For example, if your application is a blog, you may have an App\Models\Post model and a corresponding App\Policies\PostPolicy to authorize user actions such as creating or updating posts.
+- `php artisan make:policy PostPolicy --model=Post` : Generate a policy. Directory will be `app/Policies`.
+
+## Pagination
+
+- `paginate(NoOfItemsPerPage)` : method for pagination.
+- `simplePaginate(NoOfItemsPerPage)` : to paginate that only displays `next` and `previous`.
