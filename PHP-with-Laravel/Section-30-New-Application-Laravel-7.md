@@ -84,7 +84,7 @@ use App\Models\Post;
 - Add a `@foreach` to iterate through all the data in the database.
 - Change the values you want to display accordingly.
 ```blade
-{{--Blog Post--}}
+{{-- home.blade.php Blog Post--}}
    @foreach ($posts as $post)
       <div class="card mb-4">
         <img class="card-img-top" src="{{$post->post_image}}" alt="Card image cap">
@@ -114,7 +114,7 @@ Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])
     }
 ```
 ```blade
-{{--Blog Post -> READ MORE BTN--}}
+{{-- home.blade.php Blog Post -> READ MORE BTN--}}
 <a href="{{route('post',$post->id)}}" class="btn btn-primary">Read More &rarr;</a>
 ```
 
@@ -122,6 +122,7 @@ Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])
 - From the `admin-master` take a section you want to modify into a Create Option.
 - Create post route. Add a middleware to `admin.index` and `admin.post`
 ```php
+//web.php
 Route::middleware('auth')->group(function(){
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::get('/admin/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
@@ -129,12 +130,14 @@ Route::middleware('auth')->group(function(){
 ```
 - Add a `create` function in the `PostController`.
 ```php
+//PostController
  public function create(Post $post){
         return view('admin.posts.create'); 
     }
 ```
 - Add a form in the `create.blade.php`
 ```blade
+{{--create.blade.php--}}
 <x-admin-master>
 
     @section('content')
@@ -182,6 +185,7 @@ Route::middleware('auth')->group(function(){
 ### Storing Admin Post
 - Add a `store` method in `PostController`
 ```php
+//PostController
 public function store(){
         $inputs = request()->validate([
             'title' => 'required|min:8|max:255',
@@ -203,12 +207,13 @@ public function store(){
     Route::post('/admin/posts', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 ```
 ```blade
-{{--IN THE CREATE.BLADE.PHP--}}
+{{--create.blade.php--}}
  <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
 ```
 ### Viewing Admin Post
 - Add an `index` method in `PostController`
 ```php
+//PostController
     public function index(){    
         $post = Post::all();
         return view ('admin.posts.index', ['post' => $post]);  
@@ -216,12 +221,14 @@ public function store(){
 ```
 - Add it to your routes
 ```php
+//web.php inside Route::middleware('auth')->group(function()
    Route::get('/admin/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
 ```
 - For views, create an `index.blade.php` in `views/admin/posts`.
-- Create a `sectoion` for the copied `<!-- DataTales Example -->`
+- Create a `section` for the copied `<!-- DataTales Example -->`
 - Configure `<!-- DataTales Example -->` as follows:
 ```blade
+{{--index.blade.php--}}
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -259,6 +266,7 @@ public function store(){
 ```
 - Create a section for `Page level plugins` and name it `scripts`.
 ```blade
+{{--index.blade.php--}}
     @section('scripts')
 
     <!-- Page level plugins -->
