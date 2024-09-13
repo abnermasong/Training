@@ -9,11 +9,11 @@
 - Place `web.php` to `web folder` and `api.php` to `api folder`.
 - Configure the `mapWebRoutes`:
 ```php
-mapApiRoutes``group(base_path('routes/web/web.php')
+->group(base_path('routes/web/web.php')
 ```
 - Configure the `mapApiRoutes`:
 ```php
-group(base_path('routes/api/api.php')
+->group(base_path('routes/api/api.php')
 ```
 - For `post` routes, create a `post.php` and place it on the created `web folder`. Do this on other routes you want to group.
 - Create a method for that route:
