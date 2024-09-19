@@ -1,4 +1,4 @@
-#Middleware - Security / Protection
+# Middleware - Security / Protection
 - Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application.
 - To create a middleware, use the command `php artisan make:middleware NameOfMiddleware`. This will create a middleware `NameofMiddleware` in the `/app/http/middleware/`.
 - To set your laravel web application to maintenance mode, use the command `php artisan down`.
